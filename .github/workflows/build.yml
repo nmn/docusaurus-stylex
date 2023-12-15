@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - slorber/fix-docusaurus
   pull_request:
     branches:
       - main
@@ -33,3 +32,6 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Deploy
+        run: npm run deploy
