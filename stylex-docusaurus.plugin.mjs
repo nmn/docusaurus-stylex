@@ -11,7 +11,7 @@ export default function (context, options) {
             tagName: 'link',
             attributes: {
               rel: 'stylesheet',
-              href: '/stylex.css',
+              href: context.baseUrl + 'stylex.css',
             },
           },
         ],
