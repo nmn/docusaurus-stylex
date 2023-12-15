@@ -1,14 +1,24 @@
 import StyleXWebpackPlugin from "@stylexjs/webpack-plugin";
-import path from "path";
 
 export default function (context, options) {
-  console.log({ context });
-  // console.log({ StyleXWebpackPlugin });
-
   return {
     name: "stylex-docusaurus",
+
+    injectHtmlTags() {
+      return {
+        headTags: [
+          {
+            tagName: 'link',
+            attributes: {
+              rel: 'stylesheet',
+              href: '/stylex.css',
+            },
+          },
+        ],
+      };
+    },
+
     configureWebpack(config, isServer, utils) {
-      console.log("configureWebpack");
       const dev = config.mode === "development";
 
       return {
@@ -21,7 +31,7 @@ export default function (context, options) {
               type: "commonJS",
               rootDir: context.siteDir,
             },
-            filename: path.join(context.outDir, "stylex.css"),
+            filename: "stylex.css",
           }),
         ],
       };
