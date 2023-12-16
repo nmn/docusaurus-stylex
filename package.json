@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "postinstall": "patch-package",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -20,6 +21,7 @@
     "@mdx-js/react": "^3.0.0",
     "@stylexjs/stylex": "^0.3.0",
     "clsx": "^2.0.0",
+    "patch-package": "^8.0.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
