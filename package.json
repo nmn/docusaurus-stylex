@@ -2,6 +2,7 @@
   "name": "docu3-stylex",
   "version": "0.0.1",
   "description": "Docusaurus with StyleX",
+  "type": "module",
   "workspaces": [
     "packages/*",
     "apps/*"

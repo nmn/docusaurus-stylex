@@ -1,125 +1,152 @@
-import { themes as prismThemes } from "prism-react-renderer";
-import type { Config } from "@docusaurus/types";
-import type * as Preset from "@docusaurus/preset-classic";
-import stylexPlugin from "./stylex-docusaurus.plugin.mjs";
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
+import stylexPlugin from './stylex-docusaurus.plugin.mjs';
 
 const config: Config = {
-  title: "StyleX",
-  tagline: "Consistent styling for ambitious UIs",
-  favicon: "img/favicon.ico",
+  title: 'StyleX',
+  tagline: 'Consistent styling for ambitious UIs',
+  favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: "https://nmn.github.io",
+  url: 'https://nmn.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/docusaurus-stylex/",
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "nmn", // Usually your GitHub org/user name.
-  projectName: "docusaurus-stylex", // Usually your repo name.
+  organizationName: 'nmn', // Usually your GitHub org/user name.
+  projectName: 'docusaurus-stylex', // Usually your repo name.
 
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
-  presets: [
+  // presets: [
+  //   [
+  //     "classic",
+  //     {
+  //       docs: {
+  //         sidebarPath: "./sidebars.ts",
+  //         // Please change this to your repo.
+  //         // Remove this to remove the "edit this page" links.
+  //         editUrl:
+  //           "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+  //       },
+  //       blog: {
+  //         showReadingTime: true,
+  //         // Please change this to your repo.
+  //         // Remove this to remove the "edit this page" links.
+  //         editUrl:
+  //           "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+  //       },
+  //     } satisfies Preset.Options,
+  //   ],
+  // ],
+
+  plugins: [
     [
-      "classic",
+      '@docusaurus/plugin-content-docs',
       {
-        docs: {
-          sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
-        theme: {
-          customCss: "./src/css/custom.css",
-        },
-      } satisfies Preset.Options,
+        sidebarPath: './sidebars.ts',
+        // Please change this to your repo.
+        // Remove this to remove the "edit this page" links.
+        editUrl:
+          'https://github.com/nmn/docu3-stylex/tree/main/apps/docusaurus/docs/',
+      },
     ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        showReadingTime: true,
+        // Please change this to your repo.
+        // Remove this to remove the "edit this page" links.
+        editUrl:
+          'https://github.com/nmn/docu3-stylex/tree/main/apps/docusaurus/blog/',
+      },
+    ],
+    '@docusaurus/plugin-content-pages',
+    '@docusaurus/plugin-debug',
+    '@docusaurus/plugin-sitemap',
+    stylexPlugin,
   ],
 
-  plugins: [stylexPlugin],
+  themes: [
+    'docusaurus-theme-stylex',
+    // "@docusaurus/theme-search-algolia"
+  ],
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: "My Site",
+      title: 'My Site',
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
+        alt: 'My Site Logo',
+        src: 'img/logo.svg',
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Tutorial',
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
-          position: "right",
+          href: 'https://github.com/facebook/docusaurus',
+          label: 'GitHub',
+          position: 'right',
         },
       ],
     },
     footer: {
-      style: "dark",
+      style: 'dark',
       links: [
         {
-          title: "Docs",
+          title: 'Docs',
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: 'Tutorial',
+              to: '/docs/intro',
             },
           ],
         },
         {
-          title: "Community",
+          title: 'Community',
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
             },
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              label: 'Discord',
+              href: 'https://discordapp.com/invite/docusaurus',
             },
             {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
+              label: 'Twitter',
+              href: 'https://twitter.com/docusaurus',
             },
           ],
         },
         {
-          title: "More",
+          title: 'More',
           items: [
             {
-              label: "Blog",
-              to: "/blog",
+              label: 'Blog',
+              to: '/blog',
             },
             {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              label: 'GitHub',
+              href: 'https://github.com/facebook/docusaurus',
             },
           ],
         },

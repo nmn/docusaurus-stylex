@@ -17,8 +17,9 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "3.0.1",
-    "@docusaurus/preset-classic": "3.0.1",
+    "@docusaurus/core": "^3.1.0",
+    "@docusaurus/preset-classic": "^3.1.0",
+    "docusaurus-theme-stylex": "*",
     "@mdx-js/react": "^3.0.0",
     "@stylexjs/stylex": "^0.4.1",
     "clsx": "^2.0.0",
@@ -28,9 +29,9 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.0.1",
-    "@docusaurus/tsconfig": "3.0.1",
-    "@docusaurus/types": "3.0.1",
+    "@docusaurus/module-type-aliases": "^3.1.0",
+    "@docusaurus/tsconfig": "^3.1.0",
+    "@docusaurus/types": "^3.1.0",
     "@stylexjs/webpack-plugin": "^0.4.1",
     "typescript": "~5.2.2"
   },
